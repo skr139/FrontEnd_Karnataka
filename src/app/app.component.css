@@ -1,0 +1,50 @@
+div#general {
+    margin: auto;
+    margin-top: 30px;
+    width: 1400px;
+    height: 1400px;
+    /*background-color: rgb(255, 225, 180);*/
+}
+
+table {
+    border: 1px solid #000;
+}
+
+table tr {
+    border: 1px solid #000;
+}
+
+table th {
+    border: 1px solid #000;
+}
+
+table td {
+    border: 1px solid #000;
+}
+
+#formulario {
+    width: 600px;
+    height: 130px;
+    margin-top: 20px;
+    float: left;
+    /*background-color: rgb(0, 51, 3);*/
+}
+
+#selector {
+    margin-right: 180px;
+    width: 400px;
+    height: 130px;
+    /*background-color: rgb(205, 205, 180);*/
+}
+
+.tabla {
+    width: 30%;
+    float: left;
+    /*background-color: rgb(105, 205, 250);*/
+}
+
+.chart {
+    float: right;
+    width: 700px;
+    /*background-color: rgb(105, 105, 130);*/
+}

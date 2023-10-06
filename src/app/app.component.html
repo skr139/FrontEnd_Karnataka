@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba</title>
+</head>
+
+<body>
+  <div id="general">
+    <H1 style="text-align: center;">Ejercicio de prueba Karnataka</H1>
+    <br>
+    <br>
+    <h3>Por favor ingrese las fechas en el siguiente formato: aaaa-mm-dd</h3><br>
+    <div class="container" id="formulario">
+      <form>
+        <label for="fechaInicio">Fecha inicial: </label>
+        <input type="text" name="fechaInicio" id="finicio" [(ngModel)]="fechaInicio">
+        <label for="fechaFin">Fecha Final: </label>
+        <input type="text" name="fechaFin" id="ffinal" [(ngModel)]="fechaFin"><br>
+        <br>
+        <input type="submit" value="Consultar" class="btn btn-primary" (click)="obtenerDatos()">
+      </form>
+    </div>
+    <br>
+    <!--------------------------------- Slector ---------------------------------------------------->
+    <div class="container" id="selector">
+      <mat-form-field>
+        <mat-label>Empresas</mat-label>
+        <mat-select multiple (selectionChange)="checkSeleccionado($event.value)">
+          <mat-option *ngFor="let elemento of empresasNombre" value="{{elemento}}">{{elemento}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="container">
+      <!---------------------------------- Tabla ---------------------------------------------------->
+      <div class="tabla">
+        <table style="width: 300px;">
+          <tr>
+            <th>Empresa</th>
+            <th>Ventas</th>
+          </tr>
+          <tr *ngFor="let k of empresasSelec; let i = index">
+            <td>{{k}}</td>
+            <td>{{ventasSelec[i]}}</td>
+          </tr>
+        </table>
+      </div>
+      <!-------------------------------------- Grafica ---------------------------------------------->
+      <div class="chart">
+        <canvas baseChart width="600" [data]="datosChart" [options]="opcionesChart" [plugins]="pluginsChart"
+          [legend]="leyendaChart" [type]="'bar'">
+        </canvas><br>
+      </div>
+      <br>
+    </div>
+  </div>
+</body>
+
+</html>
